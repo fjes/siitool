@@ -1095,6 +1095,10 @@ static void cat_print_general(struct _sii_cat *cat)
 	//printf("General:\n");
 	struct _sii_cat *sc = sii_category_find_neighbor(cat, SII_CAT_STRINGS);
 	const char *tmpstr = NULL;
+    if (sc == NULL) {
+        printf("    INFO: String section not found.\n");
+        return;
+    }
 
 	printf("  Vendor Specific (Index of String)\n");
 
